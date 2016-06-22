@@ -56,7 +56,7 @@ class Metabolite(Species):
             tmp_formula = tmp_formula.replace("*", "")
         if "(" in tmp_formula or ")" in tmp_formula:
             warn("invalid formula (has parenthesis) in '%s'" % self.formula)
-            return None
+            return {}
         composition = {}
         parsed = element_re.findall(tmp_formula)
         for (element, count) in parsed:
